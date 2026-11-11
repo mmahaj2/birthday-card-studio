@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#742d60">
+  <meta name="description" content="Create funny, personalised birthday card messages in seconds.">
+  <title>Birthday Card Studio — Make Their Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Birthday Card Studio home">
+      <span class="brand-mark">✦</span><span>Birthday <b>Card Studio</b></span>
+    </a>
+    <span class="header-note">A little paper. A lot of laughter. <span>♥</span></span>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <div class="eyebrow"><span></span> YOUR PERSONAL BIRTHDAY CARD MAKER <span></span></div>
+      <h1>Make their birthday<br><em>unforgettable.</em></h1>
+      <p>Tell us who you're celebrating. We'll help you write a card that makes them smile — or laugh out loud.</p>
+    </section>
+
+    <section class="workspace" aria-label="Birthday card creator">
+      <form class="editor panel" id="card-form">
+        <div class="section-heading">
+          <div class="heading-icon">✎</div>
+          <div><span class="step-label">STEP 01</span><h2>Meet the birthday star</h2></div>
+        </div>
+
+        <label for="person-name">Their name</label>
+        <input id="person-name" name="name" type="text" maxlength="40" placeholder="e.g. Rahul" value="" autocomplete="off" required>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="person-age">Age</label>
+            <input id="person-age" name="age" type="number" min="1" max="120" placeholder="e.g. 30">
+          </div>
+          <div class="field">
+            <label for="person-hobby">Favourite hobby</label>
+            <input id="person-hobby" name="hobby" type="text" maxlength="50" placeholder="e.g. Gaming">
+          </div>
+        </div>
+
+        <div class="section-heading style-heading">
+          <div class="heading-icon">☻</div>
+          <div><span class="step-label">STEP 02</span><h2>Choose the card's personality</h2></div>
+        </div>
+        <div class="style-grid" role="group" aria-label="Message tone">
+          <button class="style-option selected" type="button" data-style="witty" aria-pressed="true"><span>😂</span> Funny & witty</button>
+          <button class="style-option" type="button" data-style="savage" aria-pressed="false"><span>🔥</span> Sarcastic & savage</button>
+          <button class="style-option" type="button" data-style="playful" aria-pressed="false"><span>😜</span> Cheeky & playful</button>
+          <button class="style-option" type="button" data-style="sweet" aria-pressed="false"><span>💝</span> Sweet with humour</button>
+          <button class="style-option" type="button" data-style="roast" aria-pressed="false"><span>🌶️</span> Gentle roast</button>
+        </div>
+
+        <button class="primary-button" type="submit"><span>✦</span> Create birthday magic <span class="button-arrow">→</span></button>
+        <p class="privacy-note">✧ No account needed. Your details stay in this browser.</p>
+      </form>
+
+      <section class="preview panel" aria-label="Birthday card preview">
+        <div class="preview-topline"><span class="step-label">YOUR CARD PREVIEW</span><span class="live-dot">● LIVE CANVAS</span></div>
+        <div class="card-stage">
+          <div class="open-card" id="open-card">
+            <div class="card-left">
+              <div class="confetti confetti-a">✦</div><div class="confetti confetti-b">✧</div>
+              <div class="cover-kicker">A VERY SPECIAL DAY</div>
+              <div class="cover-balloons" aria-hidden="true"><span>🎈</span><span>🎈</span><span>🎈</span></div>
+              <div class="cake" aria-hidden="true">🎂</div>
+              <div class="cover-title">HAPPY<br><i>BIRTHDAY!</i></div>
+              <div class="cover-name" id="cover-name">YOUR NAME HERE</div>
+              <div class="cover-footer">MAKE A WISH <span>✦</span> EAT SOME CAKE</div>
+            </div>
+            <div class="card-right">
+              <div class="inside-sparkle sparkle-one">✧</div><div class="inside-sparkle sparkle-two">✦</div>
+              <div class="inside-label">A LITTLE NOTE FOR YOU</div>
+              <h3 id="inside-greeting">Dear birthday star,</h3>
+              <p class="message" id="message-output">Your personalised birthday message will appear here. Add a name, age and hobby, then create your card!</p>
+              <div class="signature"><span>With lots of love,</span><b>Your favourite human ♥</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <button class="secondary-button" id="copy-button" type="button" disabled>▢ Copy message</button>
+          <button class="secondary-button" id="print-button" type="button">↗ Print card</button>
+          <button class="secondary-button regenerate" id="again-button" type="button" disabled>↻ Another version</button>
+        </div>
+        <p class="preview-hint">Made for sharing, gifting and a little friendly teasing.</p>
+      </section>
+    </section>
+    <footer class="site-footer"><span>✦ BIRTHDAY CARD STUDIO</span><span>Made with cake, confetti & good intentions.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
